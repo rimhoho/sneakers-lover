@@ -6,7 +6,7 @@ If the answer is Yes, Here's the interesting findings in [StockX](https://stockx
 
 ## Running Locally
 
-Make sure you have at least Python 3.6.9 [installed locally](http://install.python-guide.org). To push to Heroku, you'll need to install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), as well as [Postgres](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup).
+Make sure you have at least Python 3.6.9 [installed locally](http://install.python-guide.org).
 
 ```sh
 $ git clone https://github.com/rimhoho/Flask_MongDB_Plotly
