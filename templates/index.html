@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Sneakers Holic</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href= "{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href= "{{ url_for('static', filename='css/grayscale.css') }}">
+  <link rel="stylesheet" href= "{{ url_for('static', filename='css/grayscale.min.css') }}">
+
+  <!-- Custom fonts for this template -->
+  <link rel="stylesheet" href= "{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}">
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script>
+  
+  </script>
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="index.html">Sneakers Holic</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="https://stockx.com/adidas-yeezy-500-soft-vision" target="_blank">Stock X</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="https://github.com/rimhoho/PFCH" target="_blank">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h3 class="text-white mb-3">Ar you interested in Reselling or Buying sneakers?</h3>
+          <p class="text-white-50">If the answer is Yes, Here's the interesting findings in StockX where has been a popular e-commerce platform to buy and sell hype products like shoes. I picked one of top sneakers' brand "Nike Jordan" and "Adidas Yeezy" for comparing their popularity and premium values using Selenium, MongoDB, and Flask to collect and store the data and Plotly to display the visualization.</p>
+            <h4 class="text-white-50">Suggestions</h4>
+            <p class="text-white-50">- Best size to buy: 7.5
+            <br> - Best item to buy: Jordan 1 Retro High Shattered Backboard 3.0
+            <br> - Best time to buy: Thursday PM
+            <br> - Best time to Sell: Wednesday PM</p>
+        </div>
+      </div> 
+      <!-- <Button class="btn btn-primary js-scroll-trigger">Get Findings</Button>  -->
+    </div>
+  </section>
+
+  <div class="bg-secondary text-white">
+    <form class="container">
+      <div class="form-group">
+        <div class="h-75 d-inline-block"></div>
+        <select class="form-control form-control-lg" id="dropdownMenuButton" onchange="getData(this.value)"> 
+            <option value="dataset2">What size and which brand is more profitable</option>
+            <option value="dataset3">More details of the size 7.5</option>
+            <option value="dataset4">Best time to buy/sell Sneakers</option>
+        </select>
+      </div>
+        <div id="plot"></div>
+      <div>
+        <div class="h-50 d-inline-block"></div>
+        <p>- "Yeezy" is more popular to smaller size up to 7.5 and "Jordan" is more popular to other sizes(7.5 to 15).
+        <br> - "Jordan has higher value" on overall sizes than Yeezy and the most popluar size is 10 and "the most propitable size is 7.5" with keeping sales on track on Both Jordan and Yeezy.
+        <br> - "Jordan 1 Retro High Shattered Backboard 3.0" sold the most 341 times per a month with 84% of profits and "Jordan 6 Retro Travis Scott" racked up profis of 308% on size 7.5.
+        </p>
+      </div>
+      <div class="h-50 d-inline-block"></div>
+    </form>
+  </div>
+
+  <div class="container">
+      <div class="row">
+        <img src="https://stockx-360.imgix.net/Air-Jordan-11-Retro-Playoffs-2019/Images/Air-Jordan-11-Retro-Playoffs-2019/Lv2/img01.jpg?auto=format,compress&q=90&updated_at=1574092689&w=1000" width="567" height="380" alt="Jordan 11 Retro Playoffs Bred">
+        <img src="https://stockx-360.imgix.net/Air-Jordan-6-Retro-Travis-Scott/Images/Air-Jordan-6-Retro-Travis-Scott/Lv2/img01.jpg?auto=format,compress&q=90&updated_at=1570475122&w=1000" width="567" height="380" alt="Jordan 6 Retro Travis Scott">
+        <img src="https://stockx-360.imgix.net/adidas-Yeezy-500-Soft-Vision/Images/adidas-Yeezy-500-Soft-Vision/Lv2/img01.jpg?auto=format,compress&q=90&updated_at=1572553513&w=1000" width="567" height="380" style="transform: scaleX(-1)" alt="adidas Yeezy 500 Soft Vision">
+        <img src="https://stockx-360.imgix.net/adidas-Yeezy-Boost-350-V2-Cloud-White/Images/adidas-Yeezy-Boost-350-V2-Cloud-White/Lv2/img01.jpg?auto=format,compress&q=90&updated_at=1569251179&w=1000" width="567" height="380" style="transform: scaleX(-1)" alt="adidas Yeezy Boost 350 V2 Cloud White">
+        <img src="https://stockx-360.imgix.net/Air-Jordan-1-Retro-High-Shattered-Backboard-3/Images/Air-Jordan-1-Retro-High-Shattered-Backboard-3/Lv2/img01.jpg?auto=format,compress&q=90&updated_at=1570215764&w=1000" width="567" height="380" alt="Jordan 1 Retro High Shattered Backboard 3.0">
+        <img src="https://stockx-360.imgix.net/Adidas-Yeezy-Boost-700-Inertia/Images/Adidas-Yeezy-Boost-700-Inertia/Lv2/img01.jpg?auto=format,compress&q=90&updated_at=1551991286&w=1000" width="567" height="380" style="transform: scaleX(-1)" alt="adidas Yeezy Boost 700 Inertia">
+    </div>
+  </div>
+  
+  <!-- Projects Section -->
+  <section id="projects" class="my-6 bg-light">
+    <div class="container">
+      <div class="my-3 py-3">
+          <caption class="mb-3 pb-3">Ordered by realeased date</caption>
+        {{dataset.to_html(index=False,classes="table table-striped table-borderless table-hover")|safe}}
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-black small text-center text-white-50">
+    <div class="container">
+      Copyright &copy; Hyerim Hwang 2019 with <a href="https://github.com/jsanc525/startbootstrap-grayscale">Start Bootstrap Theme</a>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="{{ url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="{{ url_for('static', filename='js/grayscale.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/plots.js') }}"></script>
+
+</body>
+
+</html>
