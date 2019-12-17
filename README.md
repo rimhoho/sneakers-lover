@@ -1,45 +1,36 @@
-# Python: Getting Started
+# Sneakers lover: Getting Started
 
-A barebones Django app, which can easily be deployed to Heroku.
+Ar you interested in Reselling or Buying sneakers?
 
-This application supports the [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python) article - check it out.
+If the answer is Yes, Here's the interesting findings in [StockX](https://stockx.com/adidas-yeezy-500-soft-vision) where has been a popular e-commerce platform to buy and sell hype products like shoes. I picked one of top sneakers' brand "Nike Jordan" and "Adidas Yeezy" for comparing their popularity and premium values using Selenium, MongoDB, and Flask to collect and store the data and Plotly to display the visualization. 
 
 ## Running Locally
 
-Make sure you have Python 3.7 [installed locally](http://install.python-guide.org). To push to Heroku, you'll need to install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), as well as [Postgres](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup).
+Make sure you have at least Python 3.6.9 [installed locally](http://install.python-guide.org). To push to Heroku, you'll need to install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), as well as [Postgres](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup).
 
 ```sh
-$ git clone https://github.com/heroku/python-getting-started.git
-$ cd python-getting-started
-
-$ python3 -m venv getting-started
+$ git clone https://github.com/rimhoho/Flask_MongDB_Plotly
+$ cd Flask_MongDB_Plotly
 $ pip install -r requirements.txt
 
-$ createdb python_getting_started
-
-$ python manage.py migrate
-$ python manage.py collectstatic
-
-$ heroku local
+$ python3 app.py
+ * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+ * Restarting with stat
 ```
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
+Your app should now be running on [http://127.0.0.1:5000](http://127.0.0.1:5000).
 
-## Deploying to Heroku
+## Requirements
 
 ```sh
-$ heroku create
-$ git push heroku master
-
-$ heroku run python manage.py migrate
-$ heroku open
+$ pandas==0.25.1
+$ Flask==1.1.1
+$ pymongo==3.9.0
+$ selenium==3.141.0
 ```
-or
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 ## Documentation
 
-For more information about using Python on Heroku, see these Dev Center articles:
+For more information about using MongoDB on Flask by Pymongo
 
-- [Python on Heroku](https://devcenter.heroku.com/categories/python)
+- [Flask-PyMongo](https://flask-pymongo.readthedocs.io/en/latest/)
