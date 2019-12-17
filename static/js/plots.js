@@ -1,10 +1,17 @@
-
+// Base URL logic: If hosted on Heroku, format differently
+var host = window.location.hostname;
+if (host.includes("heroku")) {
+    var base_url = "https://" + host;
+} else {
+    var base_url = "http://127.0.0.1:5000";
+}
 function makeNum(str) {
     return Number(str);
 }
 
 function init() {
-    Plotly.d3.json("/api", function(error, response) {
+    endpoint = base_url + "/api";
+    Plotly.d3.json(endpoint, function(error, response) {
         if (error) return console.warn(error);
         // Fill the x and y arrays as a function of the selected dataset
         var datas = response[0]["What size and which brand is more profitable"];
@@ -100,7 +107,8 @@ function getData(dataset) {
     // Initialize empty arrays to contain our axes
     var x = [];
     var y = [];
-    Plotly.d3.json("/api", function(error, response) {
+    endpoint = base_url + "/api";
+    Plotly.d3.json(endpoint, function(error, response) {
         if (error) return console.warn(error);
         switch (dataset) {
         case "dataset2":
