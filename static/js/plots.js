@@ -1,20 +1,11 @@
-// Base URL logic: If hosted on Heroku, format differently
-var host = window.location.hostname;
-if (host.includes("heroku")) {
-    var base_url = "https://" + host;
-} else {
-    var base_url = "http://127.0.0.1:5000";
-}
-function makeNum(str) {
-    return Number(str);
-}
+
 
 function init() {
-    endpoint = base_url + "/api";
+    endpoint =  "/api";
     Plotly.d3.json(endpoint, function(error, response) {
         if (error) return console.warn(error);
         // Fill the x and y arrays as a function of the selected dataset
-        var datas = response[0]["What size and which brand is more profitable"];
+        var datas = response[0]["What size and which brand are more profitable"];
         var max_price = [];
         var count_sneakers = [];
         var category_max = [];
@@ -91,7 +82,17 @@ function init() {
             marker:{color: 'rgba(204,204,204,1)'}
         };
         data = [trace1, trace2, trace3, trace4, trace5];
-        var layout = {title: "What size and which brand is more profitable"};
+        var layout = {
+            title: "What size and which brand are more profitable",
+            xaxis: {
+                title: {
+                  text: 'Size',
+                  font: {
+                    size: 18
+                  }
+                },
+            }
+        };
         var PLOT = document.getElementById("plot");
         Plotly.plot(PLOT, data, layout);
     })
@@ -107,12 +108,12 @@ function getData(dataset) {
     // Initialize empty arrays to contain our axes
     var x = [];
     var y = [];
-    endpoint = base_url + "/api";
+    endpoint = "/api";
     Plotly.d3.json(endpoint, function(error, response) {
         if (error) return console.warn(error);
         switch (dataset) {
         case "dataset2":
-            var datas = response[0]["What size and which brand is more profitable"];
+            var datas = response[0]["What size and which brand are more profitable"];
             var max_price = [];
             var count_sneakers = [];
             var category_max = [];
@@ -189,7 +190,7 @@ function getData(dataset) {
                 marker:{color: 'rgba(204,204,204,1)'}
             };
             data = [trace1, trace2, trace3, trace4, trace5];
-            var layout = {title: "What size and which brand is more profitable"};
+            var layout = {title: "What size and which brand are more profitable"};
             break;
         case "dataset3":
             datas = response[0]["More details of the size 7.5"]
@@ -216,7 +217,16 @@ function getData(dataset) {
             };
             var data = [trace1, trace2, trace3];
             var layout = {
-                title: "More details of the size 7.5"};
+                title: "What size and which brand are more profitable",
+                xaxis: {
+                    title: {
+                      text: 'Size',
+                      font: {
+                        size: 18
+                      }
+                    },
+                }
+            };
             break;
         case "dataset4":
             var datas = response[0]["Best time to buy/sell Sneakers"]

@@ -1,0 +1,15 @@
+am/pm,days,max_price,min_price,avg_price
+AM,Friday,1061,184,312.77
+AM,Monday,1149,170,318.51
+AM,Saturday,1047,186,305.80
+AM,Sunday,1000,185,312.29
+AM,Thursday,1061,168,321.62
+AM,Tuesday,1188,161,308.27
+AM,Wednesday,1066,165,316.91
+PM,Friday,1089,180,299.95
+PM,Monday,1090,168,305.03
+PM,Saturday,1000,170,302.86
+PM,Sunday,1103,165,311.55
+PM,Thursday,1079,140,310.26
+PM,Tuesday,1100,169,309.26
+PM,Wednesday,1360,165,304.82

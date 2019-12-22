@@ -47,7 +47,7 @@ def sign_in(driver, login_url):
     return 
 def click_for_week(driver, collection):
     # avoid = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="om-md1cc1x0pdrcptwxfzur-optin"]/div/button')))
-    # time.sleep(1) 
+    time.sleep(1) 
     # if avoid:
     #     avoid.click()
     #     time.sleep(1) 

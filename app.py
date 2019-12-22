@@ -66,7 +66,7 @@ def api():
             new_dic[str(value)] = list(key)
             new_data.append(new_dic)
         size_trend[dicts] = new_data
-    each_data['What size and which brand is more profitable'] = size_trend
+    each_data['What size and which brand are more profitable'] = size_trend
 
     df2 = df.loc[df['size'] == 7.5]
     df_7half_size_trend = df2.groupby(df['name']).agg(avg_price=('price', 'mean'), count_sneakers=('index', 'count'), size=('size', 'mean'))#, retaile_price=('retaile_price', 'mean'))
@@ -86,7 +86,6 @@ def api():
         time_trend[dicts] = new_data
     each_data['Best time to buy/sell Sneakers'] = time_trend
 
-    # each_Data['Which sneakers are more profiable']
     data.append(each_data)
     return jsonify(data)
 
