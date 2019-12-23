@@ -32,7 +32,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="index.html">Sneakers Holic</a>
+      <a class="navbar-brand js-scroll-trigger" href="https://sneaker-lover.herokuapp.com/">Sneakers Holic</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
@@ -55,9 +55,9 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <h3 class="text-white mb-3">Finding a best item and size, time of sneakers in a resale platform for Resellers or Buyers</h3>
-          <p class="text-white-50">I always go to StockX.com to check the size of mine and the price whenever I lose a raffle ticket from the Adidas or the Yeezy Supply site. I was so curious to see overall total sales trend between Jordan and Yeezy, and which size is more popular (= profitable) when people try to buy or sell them on the resale platform, stockX.com.</p>
-            <h4 class="text-white-50">🔎 Suggestions</h4>
+          <h3 class="text-white mb-3 text-center">Finding a best item and size, time of sneakers in a resale platform for Resellers or Buyers</h3>
+          <p class="text-white-50">I always go to StockX.com to check the new realeased sneakers and the price whenever I lose a raffle ticket from the Adidas or the Yeezy Supply site. I was so curious to see overall total sales trend between Jordan and Yeezy, and which size is more popular (= profitable) when people try to buy or sell them on the resale platform, stockX.com.</p>
+            <h4 class="text-white-50">🔎 Conclusion</h4>
             <p class="text-white-50">- Best size to buy: 7.5
             <br> - Best item to buy: Jordan 1 Retro High Shattered Backboard 3.0
             <br> - Best time to buy: Thursday PM
@@ -68,47 +68,104 @@
     </div>
   </section>
 
-  <div class="bg-secondary text-white">
+  <div class="bg-palenavy text-white">
     <form class="container">
       <div class="form-group">
         <div class="h-75 d-inline-block"></div>
         <select class="form-control form-control-lg" id="dropdownMenuButton" onchange="getData(this.value)"> 
             <option value="dataset2">What size and which brand are more profitable</option>
-            <option value="dataset3">More details of the size 7.5</option>
+            <option value="dataset3">More details on size 7.5</option>
             <option value="dataset4">Best time to buy/sell Sneakers</option>
         </select>
       </div>
         <div id="plot"></div>
       <div>
         <div class="h-50 d-inline-block"></div>
-        <p>👀 Yeezy is more popular to smaller size up to 7.5 and Jordan is more popular to other sizes (7.5 to15).</p>
-        <p>👀 Jordan has higher value on overall sizes than Yeezy and the most popluar size is 10 and the most propitable size is 7.5 with keeping sales on track on Both Jordan and Yeezy.</p>
-        <p>👀 Jordan 1 Retro High Shattered Backboard 3.0 sold the most 341 times per a month with 84% of profits and Jordan 6 Retro Travis Scott racked up profis of 308% on size 7.5.</p>
+        <p>👀 As the total sales increase, the maximum prices of sneakers have been decreased.</p>
+        <p>👀 Yeezy is more popular to smaller size up to 7.5 and Jordan is more popular to other sizes, 7.5 to15.  Also, One of the most frequent size of sneakers are 8 to 11.</p>
+        <p>👀 Jordan has higher value on overall sizes than Yeezy and the most popluar size is 10 and the most profitable size is 7.5 with keeping sales on track on Both Jordan and Yeezy.</p>
+        <p>👀 Jordan 1 Retro High Shattered Backboard 3.0 sold the most 341 times per a month with 84% of profits and Jordan 6 Retro Travis Scott racked up profits of 308% on size 7.5.</p>
       </div>
-      <div class="h-50 d-inline-block"></div>
+      <div class="h-75 d-inline-block"></div>
     </form>
   </div>
-
+  <div class="h-75 d-inline-block mb-3"></div>
   <div class="container">
-      <div class="row">
-        <img src="https://stockx-360.imgix.net/Air-Jordan-11-Retro-Playoffs-2019/Images/Air-Jordan-11-Retro-Playoffs-2019/Lv2/img01.jpg?auto=format,compress&q=90&updated_at=1574092689&w=1000" width="567" height="380" alt="Jordan 11 Retro Playoffs Bred">
-        <img src="https://stockx-360.imgix.net/Air-Jordan-6-Retro-Travis-Scott/Images/Air-Jordan-6-Retro-Travis-Scott/Lv2/img01.jpg?auto=format,compress&q=90&updated_at=1570475122&w=1000" width="567" height="380" alt="Jordan 6 Retro Travis Scott">
-        <img src="https://stockx-360.imgix.net/adidas-Yeezy-500-Soft-Vision/Images/adidas-Yeezy-500-Soft-Vision/Lv2/img01.jpg?auto=format,compress&q=90&updated_at=1572553513&w=1000" width="567" height="380" style="transform: scaleX(-1)" alt="adidas Yeezy 500 Soft Vision">
-        <img src="https://stockx-360.imgix.net/adidas-Yeezy-Boost-350-V2-Cloud-White/Images/adidas-Yeezy-Boost-350-V2-Cloud-White/Lv2/img01.jpg?auto=format,compress&q=90&updated_at=1569251179&w=1000" width="567" height="380" style="transform: scaleX(-1)" alt="adidas Yeezy Boost 350 V2 Cloud White">
-        <img src="https://stockx-360.imgix.net/Air-Jordan-1-Retro-High-Shattered-Backboard-3/Images/Air-Jordan-1-Retro-High-Shattered-Backboard-3/Lv2/img01.jpg?auto=format,compress&q=90&updated_at=1570215764&w=1000" width="567" height="380" alt="Jordan 1 Retro High Shattered Backboard 3.0">
-        <img src="https://stockx-360.imgix.net/Adidas-Yeezy-Boost-700-Inertia/Images/Adidas-Yeezy-Boost-700-Inertia/Lv2/img01.jpg?auto=format,compress&q=90&updated_at=1551991286&w=1000" width="567" height="380" style="transform: scaleX(-1)" alt="adidas Yeezy Boost 700 Inertia">
+    <div class="h-75 d-inline-block mb-3"></div>
+    <caption class="mb-3 pb-3">Ordered by Profits on Overall sizes</caption>
+    <div class="row">
+      <div class="card m-3 box-shadow" style="width:21.6rem;">
+        <img class="card-img-top" src="https://stockx-360.imgix.net/Air-Jordan-6-Retro-Travis-Scott/Images/Air-Jordan-6-Retro-Travis-Scott/Lv2/img01.jpg?auto=format,compress&q=90&updated_at=1570475122&w=1000" alt="Jordan 6 Retro Travis Scott">
+        <div class="card-body">
+          <h5 class="card-title text-center">Jordan 6 Retro Travis Scott</h5 class="card-title">
+          <p class="card-text">Release Date: 10/11/2019</p>
+          <p class="card-text">Retaile Price: $250</p>
+          <p class="card-text"># of Total Sale: 10,366</p>
+          <p class="card-text">Price Premium: 100.0%</p>
+        </div>
+      </div>
+      <div class="card m-3 box-shadow" style="width:21.6rem;">
+        <img class="card-img-top" src="https://stockx-360.imgix.net/Air-Jordan-1-Retro-High-Shattered-Backboard-3/Images/Air-Jordan-1-Retro-High-Shattered-Backboard-3/Lv2/img01.jpg?auto=format,compress&q=90&updated_at=1570215764&w=1000" alt="Jordan 1 Retro High Shattered Backboard 3.0">
+        <div class="card-body">
+          <h5 class="card-title text-center">Jordan 1 Retro High Shattered Backboard 3.0</h5 class="card-title">
+          <p class="card-text">Release Date: 10/26/2019</p>
+          <p class="card-text">Retaile Price: $160</p>
+          <p class="card-text"># of Total Sale: 18,572</p>
+          <p class="card-text">Price Premium: 40.6%</p>
+        </div>
+      </div>
+      <div class="card m-3 box-shadow" style="width:21.6rem;">
+        <img class="card-img-top" src="https://stockx-360.imgix.net/adidas-Yeezy-Boost-350-V2-Cloud-White/Images/adidas-Yeezy-Boost-350-V2-Cloud-White/Lv2/img01.jpg?auto=format,compress&q=90&updated_at=1569251179&w=1000" alt="Yeezy Boost 350 V2 Cloud White">
+        <div class="card-body">
+          <h5 class="card-title text-center">Yeezy Boost 350 V2 Cloud White</h5 class="card-title">
+          <p class="card-text">Release Date: 09/21/2019</p>
+          <p class="card-text">Retaile Price: $220</p>
+          <p class="card-text"># of Total Sale: 27,378</p>
+          <p class="card-text">Price Premium: 24.5%</p>
+        </div>
+      </div>
+      <div class="card m-3 box-shadow" style="width:21.6rem;">
+        <img class="card-img-top" src="https://stockx-360.imgix.net/adidas-Yeezy-500-Soft-Vision/Images/adidas-Yeezy-500-Soft-Vision/Lv2/img01.jpg?auto=format,compress&q=90&updated_at=1572553513&w=1000" alt="Yeezy 500 Soft Vision">
+        <div class="card-body">
+          <h5 class="card-title text-center">Yeezy 500 Soft Vision</h5 class="card-title">
+          <p class="card-text">Release Date: 11/02/2019</p>
+          <p class="card-text">Retaile Price: $200</p>
+          <p class="card-text"># of Total Sale: 5,384</p>
+          <p class="card-text">Price Premium: 22.5%</p>
+        </div>
+      </div>
+      <div class="card m-3 box-shadow" style="width:21.6rem;">
+        <img class="card-img-top" src="https://stockx-360.imgix.net/Air-Jordan-11-Retro-Playoffs-2019/Images/Air-Jordan-11-Retro-Playoffs-2019/Lv2/img01.jpg?auto=format,compress&q=90&updated_at=1574092689&w=1000" alt="Jordan 11 Retro Playoffs Bred (2019)" style="height: 225px; width: 100%; display: block;">
+        <div class="card-body">
+          <h5 class="card-title text-center">Jordan 11 Retro Playoffs Bred (2019)</h5 class="card-title">
+          <p class="card-text">Release Date: 12/14/2019</p>
+          <p class="card-text">Retaile Price: $220</p>
+          <p class="card-text"># of Total Sale: 4,808</p>
+          <p class="card-text">Price Premium: 20.5%</p>
+        </div>
+      </div>
+      <div class="card m-3 box-shadow" style="width:21.6rem;">
+        <img class="card-img-top" src="https://stockx-360.imgix.net/Adidas-Yeezy-Boost-700-Inertia/Images/Adidas-Yeezy-Boost-700-Inertia/Lv2/img01.jpg?auto=format,compress&q=90&updated_at=1551991286&w=1000" alt="Yeezy Boost 700 Inertia">
+        <div class="card-body">
+          <h5 class="card-title text-center">Yeezy Boost 700 Inertia</h5 class="card-title">
+          <p class="card-text">Release Date: 03/09/2019</p>
+          <p class="card-text">Retaile Price: $300</p>
+          <p class="card-text"># of Total Sale: 20,796</p>
+          <p class="card-text">Price Premium: 12.7%</p>
+        </div>
+      </div>
     </div>
   </div>
-  
+  <div class="h-75 d-inline-block mb-3"></div>
   <!-- Projects Section -->
-  <section id="projects" class="my-6 bg-light">
+  <!-- <section id="projects" class="my-6 bg-light">
     <div class="container">
       <div class="my-3 py-3">
-          <caption class="mb-3 pb-3">Ordered by realeased date</caption>
+        <caption class="mb-3 pb-3">Ordered by realeased date</caption>
         {{dataset.to_html(index=False,classes="table table-striped table-borderless table-hover")|safe}}
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- Footer -->
   <footer class="bg-black small text-center text-white-50">
     <div class="container">

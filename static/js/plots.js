@@ -1,7 +1,13 @@
-
+// Base URL logic: If hosted on Heroku, format differently
+var host = window.location.hostname;
+if (host.includes("heroku")) {
+    var base_url = "https://" + host;
+} else {
+    var base_url = "http://127.0.0.1:5000";
+}
 
 function init() {
-    endpoint =  "/api";
+    endpoint = base_url + "/api";
     Plotly.d3.json(endpoint, function(error, response) {
         if (error) return console.warn(error);
         // Fill the x and y arrays as a function of the selected dataset
@@ -17,12 +23,12 @@ function init() {
         var jordan_max = [];
         var yeezy_max = [];
         datas['max_price'].forEach(dict => {
-            max_price.push(makeNum(Object.keys(dict)[0]));
+            max_price.push(Number(Object.keys(dict)[0]));
             category_max.push(Object.values(dict)[0][0]);
             size_max.push(Object.values(dict)[0][1]);
         });
         datas['count_sneakers'].forEach(dict => {
-            count_sneakers.push(makeNum(Object.keys(dict)[0]));
+            count_sneakers.push(Number(Object.keys(dict)[0]));
         });
         for (var i = 0; i < max_price.length/2; i++) {
             jordan_max.push(max_price[i]);
@@ -85,12 +91,7 @@ function init() {
         var layout = {
             title: "What size and which brand are more profitable",
             xaxis: {
-                title: {
-                  text: 'Size',
-                  font: {
-                    size: 18
-                  }
-                },
+                title: {text: 'Size'},
             }
         };
         var PLOT = document.getElementById("plot");
@@ -108,7 +109,7 @@ function getData(dataset) {
     // Initialize empty arrays to contain our axes
     var x = [];
     var y = [];
-    endpoint = "/api";
+    endpoint = base_url + "/api";
     Plotly.d3.json(endpoint, function(error, response) {
         if (error) return console.warn(error);
         switch (dataset) {
@@ -125,12 +126,12 @@ function getData(dataset) {
             var jordan_max = [];
             var yeezy_max = [];
             datas['max_price'].forEach(dict => {
-                max_price.push(makeNum(Object.keys(dict)[0]));
+                max_price.push(Number(Object.keys(dict)[0]));
                 category_max.push(Object.values(dict)[0][0]);
                 size_max.push(Object.values(dict)[0][1]);
             });
             datas['count_sneakers'].forEach(dict => {
-                count_sneakers.push(makeNum(Object.keys(dict)[0]));
+                count_sneakers.push(Number(Object.keys(dict)[0]));
             });
             for (var i = 0; i < max_price.length/2; i++) {
                 jordan_max.push(max_price[i]);
@@ -190,43 +191,38 @@ function getData(dataset) {
                 marker:{color: 'rgba(204,204,204,1)'}
             };
             data = [trace1, trace2, trace3, trace4, trace5];
-            var layout = {title: "What size and which brand are more profitable"};
-            break;
-        case "dataset3":
-            datas = response[0]["More details of the size 7.5"]
-            var trace1 = {
-                x: Object.keys(datas["avg_price"]),
-                y: Object.values(datas["count_sneakers"]),
-                type: 'line',
-                name: '# of Sales',
-                line:{color: 'rgba(204,204,204,1)', dash: 'dot', width: 4},
-            };
-            var trace2 = {
-                x: Object.keys(datas["avg_price"]),
-                y: Object.values(datas["retaile_price"]),
-                type: 'line',
-                name: 'Original Retaile Prices',
-                line: {color: 'grey', width: 3}
-            };
-            var trace3 = {
-                x: Object.keys(datas["avg_price"]),
-                y: Object.values(datas["how_much_earn"]),
-                marker:{color: 'rgba(222,45,38,0.8)'},
-                type: 'bar',
-                name: '% of Profits'
-            };
-            var data = [trace1, trace2, trace3];
             var layout = {
                 title: "What size and which brand are more profitable",
                 xaxis: {
-                    title: {
-                      text: 'Size',
-                      font: {
-                        size: 18
-                      }
-                    },
+                    title: {text: 'Size'},
                 }
             };
+            break;
+        case "dataset3":
+            datas = response[0]["More details on size 7.5"]
+            var trace1 = {
+                x: ['Yeezy-500', 'Yeezy-350', 'Yeezy-700', 'Jordan-1', 'Jordan-11', 'Jordan-6'],
+                y: Object.values(datas["count_sneakers"]),
+                type: 'line',
+                name: 'Total Sales on size 7.5',
+                line:{color: 'rgba(204,204,204,1)', dash: 'dot', width: 4},
+            };
+            var trace2 = {
+                x: ['Yeezy-500', 'Yeezy-350', 'Yeezy-700', 'Jordan-1', 'Jordan-11', 'Jordan-6'],
+                y: Object.values(datas["retaile_price"]),
+                type: 'line',
+                name: 'Retaile Prices',
+                line: {color: 'grey', width: 3}
+            };
+            var trace3 = {
+                x: ['Yeezy-500', 'Yeezy-350', 'Yeezy-700', 'Jordan-1', 'Jordan-11', 'Jordan-6'],
+                y: Object.values(datas["how_much_earn"]),
+                marker:{color: 'rgba(222,45,38,0.8)'},
+                type: 'bar',
+                name: '% of Profits on size 7.5'
+            };
+            var data = [trace1, trace2, trace3];
+            var layout = {title: "More details on size 7.5"};
             break;
         case "dataset4":
             var datas = response[0]["Best time to buy/sell Sneakers"]
@@ -239,13 +235,13 @@ function getData(dataset) {
             var min_am = [];
             var min_pm = [];
             datas['max_price'].forEach(dict => {
-                key_max_price.push(makeNum(Object.keys(dict)[0]));
+                key_max_price.push(Number(Object.keys(dict)[0]));
             });
             datas['min_price'].forEach(dict => {
-                key_min_price.push(makeNum(Object.keys(dict)[0]))
+                key_min_price.push(Number(Object.keys(dict)[0]))
             });
             datas['avg_price'].forEach(dict => {
-                key_avg_price.push(makeNum(Object.keys(dict)[0]))
+                key_avg_price.push(Number(Object.keys(dict)[0]))
             });
             for (var i = 0; i < key_max_price.length/2; i++) {
                 max_am.push(key_max_price[i]);
