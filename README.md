@@ -2,7 +2,7 @@
 
 Ar you interested in Reselling or Buying sneakers?
 
-If the answer is Yes, Here's the interesting findings in [StockX](https://stockx.com/adidas-yeezy-500-soft-vision) where has been a popular e-commerce platform to buy and sell hype products like shoes. I picked one of top sneakers' brand "Nike Jordan" and "Adidas Yeezy" for comparing their popularity and premium values using Selenium, MongoDB, and Flask to collect and store the data and Plotly to display the visualization. 
+If the answer is Yes, Here's the interesting findings in [Sneakers lover](https://sneaker-lover.herokuapp.com/) that is a well known of its transparency in prices and only selling if a sneaker is verified to be authentic. I picked one of top sneakers' brand "Nike Jordan" and "Adidas Yeezy" for comparing their popularity and premium values using Selenium, MongoDB, and Flask to collect and store the data and Plotly to display the visualization. 
 
 ## Running Locally
 
